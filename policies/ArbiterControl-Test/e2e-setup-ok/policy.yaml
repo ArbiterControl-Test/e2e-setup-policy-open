@@ -1,0 +1,8 @@
+version: "1.0"
+provenance: { required: false, required_fields: [], artifact_path: ".ai/provenance.json" }
+protected_paths:
+  - { pattern: "src/**", label: "Source", risk_class: "standard" }
+evidence_requirements:
+  - path_pattern: "src/**"
+    required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+failure_defaults: { protected_path_unavailable_input: DENY }
